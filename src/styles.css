@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+
+.accordion-container {
+  margin: 0 auto;
+}
+
+.ui-accordion .ui-accordion-content {
+  overflow: hidden;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.rounded {
+  border-radius: 10px !important;
+}
+
+.accordion {
+--bs-accordion-btn-icon-transform: none !important;
+}
+
+.accordion-button::after {
+background-image: url("assets/images/down.png") !important;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url("assets/images/up.png") !important;
+}
+
+.success-text {
+font-size: 3rem;
+margin: 0 auto;
+text-align: center;
+}
+
+.form-wrapper {
+max-width: 880px;
+margin: 0 auto;
+padding: 10px;
+border: 1px solid rgba(248, 249, 250, 1);
+border-radius: 12px;
+background-color: rgba(248, 249, 250, 1);
+}
+

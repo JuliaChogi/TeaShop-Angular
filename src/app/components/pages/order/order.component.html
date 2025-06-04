@@ -1,0 +1,101 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Сделать заказ</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="card p-3 p-md-4">
+
+        <form [formGroup]="orderForm" (ngSubmit)="submitForm()" *ngIf="!isSubmitted" class="row g-3">
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Имя*</label>
+            <input formControlName="firstName" class="form-control" />
+            <div class="invalid-feedback d-block"
+                 *ngIf="orderForm.get('firstName')?.touched && orderForm.get('firstName')?.invalid">
+              Имя обязательно и должно содержать только буквы
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Фамилия*</label>
+            <input formControlName="lastName" class="form-control" />
+            <div class="invalid-feedback d-block"
+                 *ngIf="orderForm.get('lastName')?.touched && orderForm.get('lastName')?.invalid">
+              Фамилия обязательна и должна содержать только буквы
+            </div>
+          </div>
+
+
+          <div class="col-12">
+            <label class="form-label">Телефон*</label>
+            <input formControlName="phone" class="form-control" />
+            <div class="invalid-feedback d-block"
+                 *ngIf="orderForm.get('phone')?.touched && orderForm.get('phone')?.invalid">
+              Введите корректный номер: 11 цифр, можно с +
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Страна*</label>
+            <input formControlName="country" class="form-control" />
+            <div class="invalid-feedback d-block"
+                 *ngIf="orderForm.get('country')?.touched && orderForm.get('country')?.invalid">
+              Укажите страну
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Индекс*</label>
+            <input formControlName="zip" class="form-control" />
+            <div class="invalid-feedback d-block"
+                 *ngIf="orderForm.get('zip')?.touched && orderForm.get('zip')?.invalid">
+              Укажите индекс
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Адрес*</label>
+            <input formControlName="address" class="form-control" />
+            <div class="invalid-feedback d-block"
+                 *ngIf="orderForm.get('address')?.touched && orderForm.get('address')?.invalid">
+              Адрес обязателен и может содержать буквы, цифры, пробел, - и /
+            </div>
+          </div>
+
+
+          <div class="col-12">
+            <label class="form-label">Товар</label>
+            <input formControlName="product" class="form-control" />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Комментарий (необязательно)</label>
+            <textarea formControlName="comment" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="col-12">
+            <div *ngIf="showError" class="alert alert-danger mb-0">
+              Произошла ошибка. Попробуйте еще раз.
+            </div>
+          </div>
+
+
+          <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-success px-4" type="submit" [disabled]="isLoading">
+              {{ isLoading ? 'Отправка...' : 'Отправить' }}
+            </button>
+          </div>
+        </form>
+
+        <div *ngIf="isSubmitted" class="alert alert-success text-center py-4">
+          <h3>Спасибо за заказ!</h3>
+          <img src="assets/images/banner3.png" class="img-fluid w-100" style="max-width: 720px;">
+          <p class="mb-0">Мы свяжемся с вами в ближайшее время ♡</p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
