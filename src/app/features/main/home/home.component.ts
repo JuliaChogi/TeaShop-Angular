@@ -4,11 +4,11 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'home-component',
-  templateUrl: './home.component.html',
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit, OnDestroy {
-showPopup: boolean = false;
-private destroy$ = new Subject<void>();
+  showPopup: boolean = false;
+  private destroy$ = new Subject<void>();
   constructor(private router: Router) { }
   ngOnInit(): void {
     timer(10000)

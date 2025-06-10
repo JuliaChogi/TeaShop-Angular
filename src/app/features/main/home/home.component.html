@@ -1,0 +1,59 @@
+<section class="mt-5">
+  <div class="banner d-flex justify-content-center">
+    <div><img src="assets/images/banner1.png" alt="Banner"/></div>
+  </div>
+</section>
+
+<section>
+  <p class="h2 text-center mt-5 mb-5">Ответы на часто задаваемые вопросы</p>
+  <div class="wrapper col-lg-8 mx-auto">
+    <ngb-accordion #acc="ngbAccordion"  >
+      <ngb-panel id="panel-0" >
+        <ng-template ngbPanelTitle class="custom-accordion">
+          <span>Собираете ли вы подарочные боксы?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="panel-1">
+        <ng-template ngbPanelTitle>
+          <span>Сколько у вас разновидностей чая?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Очень много и мы постоянно пополняем нашу коллекцию!
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="panel-2">
+        <ng-template ngbPanelTitle>
+          <span>В какой срок осуществляется доставка?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Курьерской доставкой в день заказа с 9:00 до 20:00
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="panel-3">
+        <ng-template ngbPanelTitle>
+          <span>У вас обновляется ассортимент?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Да, мы стараемся следить за чайными трендами и постоянно обновляем нашу коллекцию чая на радость нашим любимым клиентам.
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel id="panel-4">
+        <ng-template ngbPanelTitle>
+          <span>Какого объема у вас пачки чая?</span>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          Вы можете выбрать любой вес вашей упаковки чая. Однако, наборы чая продаются со стандартными упаковками в 100 г.
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</section>
+
+<popup-component *ngIf="showPopup" (close)="onPopupClose()" (goToCatalog)="onPopupNavigate()"></popup-component>

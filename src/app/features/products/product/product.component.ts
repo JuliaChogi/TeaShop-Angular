@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TeaType} from "../../../types/tea.type";
 import {ActivatedRoute, Router} from "@angular/router";
-import {TeaService} from "../../../services/tea.service";
+import {TeaService} from "../../../shared/services/tea.service";
+
 
 @Component({
   selector: 'product-component',

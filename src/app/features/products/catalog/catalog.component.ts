@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TeaService} from "../../../services/tea.service";
 import {TeaType} from "../../../types/tea.type";
+import {TeaService} from "../../../shared/services/tea.service";
 
 @Component({
   selector: 'catalog-component',
