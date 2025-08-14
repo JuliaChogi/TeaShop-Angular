@@ -7,7 +7,7 @@ import {TeaService} from "../../../shared/services/tea.service";
 @Component({
   selector: 'product-component',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+
 })
 export class ProductComponent implements OnInit {
 tea: TeaType | null = null;

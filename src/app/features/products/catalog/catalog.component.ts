@@ -5,7 +5,7 @@ import {TeaService} from "../../../shared/services/tea.service";
 @Component({
   selector: 'catalog-component',
   templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.css']
+  styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
 teas: TeaType[] = [];

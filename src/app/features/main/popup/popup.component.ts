@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'popup-component',
   templateUrl: './popup.component.html',
-  styleUrls: ['./popup.component.css']
+  styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
   @Output() close = new EventEmitter<void>();
