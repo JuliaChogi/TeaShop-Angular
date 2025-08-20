@@ -21,6 +21,19 @@
           <a class="nav-link" routerLink="/catalog" routerLinkActive="active">Каталог</a>
         </div>
       </div>
+
+      <form class="d-flex ms-auto" (ngSubmit)="onSearch()">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Поиск"
+          aria-label="Поиск"
+          [(ngModel)]="searchQuery"
+          name="search"
+        />
+        <button class="btn btn-outline-success me-2" type="submit">Найти</button>
+        <button class="btn btn-outline-danger" type="button" (click)="resetSearch()">Сброс</button>
+      </form>
     </div>
   </nav>
 </header>

@@ -1,5 +1,8 @@
+@import 'bootstrap/scss/bootstrap';
+
 .accordion-container {
   margin: 0 auto;
+
 }
 .accordion-button {
   background-color: #007bff;
@@ -12,6 +15,16 @@
   border-radius: 12px;
   transition: background-color 0.3s;
   margin-bottom: 10px;
+}
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.accordion-item:last-of-type > .accordion-header .accordion-button.collapsed {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .accordion-button:not(.collapsed) {
@@ -35,7 +48,7 @@
 }
 
 .accordion-item {
-  border: none;
+  border: 0;
 }
 
 .rounded {
@@ -93,3 +106,5 @@ background-color: rgba(248, 249, 250, 1);
   line-height: 1.6;
   transition: all 0.3s ease;
 }
+
+

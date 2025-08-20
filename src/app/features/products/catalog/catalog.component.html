@@ -1,6 +1,17 @@
-<section *ngIf="!isLoading">
-  <p class="h2 text-center mt-5 mb-5">Наши чайные коллекции</p>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 p-4">
+<div class="container my-4">
+
+  <h2>
+    {{ searchQuery ? ('Результаты поиска по запросу "' + searchQuery + '"') : 'Наши чайные коллекции' }}
+  </h2>
+
+
+  <div *ngIf="isLoading" class="my-3">Загрузка...</div>
+
+  <div *ngIf="!isLoading && teas.length === 0" class="my-3 text-muted">
+    Ничего не найдено
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 p-4 ">
     <div class="col" *ngFor="let tea of teas">
       <div class="card h-100 bg-light shadow-sm d-flex flex-column">
         <a class="test-popup-link" [href]="tea.image" target="_blank">
@@ -14,10 +25,5 @@
       </div>
     </div>
   </div>
-</section>
-
-<div *ngIf="isLoading" class="text-center my-5">
-  <div class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Загрузка...</span>
-  </div>
 </div>
+
